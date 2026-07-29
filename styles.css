@@ -52,9 +52,13 @@
   padding: 0;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
   font-size: 16px;
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 body {
@@ -62,7 +66,6 @@ body {
   background-color: var(--dark-bg);
   color: var(--text-main);
   line-height: 1.6;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -640,6 +643,8 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--dark-border);
   cursor: ew-resize;
   user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
 }
 
 .ba-image {
@@ -1088,33 +1093,6 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1rem;
 }
 
-/* Responsive Media Queries */
-@media (max-width: 992px) {
-  .hero-container, .guarantee-grid, .footer-container {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-title { font-size: 2.5rem; }
-  .services-grid { grid-template-columns: 1fr; }
-  
-  .calc-options { grid-template-columns: 1fr; }
-  .cost-breakdown { grid-template-columns: 1fr; }
-  
-  .ba-after img {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-menu {
-    display: none;
-  }
-  .mobile-toggle { display: flex; }
-  .hero-section { padding: 3rem 0; }
-  .ba-slider-container { height: 360px; }
-  .calculator-card { padding: 2rem 1.5rem; }
-}
-
 /* Quick Space Reference Badges & Breakdown Cards */
 .m2-guide-badges {
   display: flex;
@@ -1175,5 +1153,88 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-muted);
   line-height: 1.2;
   display: block;
+}
+
+/* Responsive Media Queries Exhaustivas para Mobile y Tablet */
+@media (max-width: 992px) {
+  .hero-container, .guarantee-grid, .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title { font-size: 2.6rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  
+  .calc-options { grid-template-columns: 1fr; }
+  .cost-breakdown { grid-template-columns: 1fr; }
+  
+  .ba-after img {
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu { display: none; }
+  .mobile-toggle { display: flex; }
+  .container { padding: 0 1.2rem; max-width: 100%; overflow-x: hidden; }
+  
+  /* Top bar y Header */
+  .top-bar-content { flex-direction: column; text-align: center; gap: 0.4rem; padding: 0.3rem 0; font-size: 0.8rem; }
+  .header-container { height: 70px; }
+  .brand-logo { height: 42px; }
+  
+  /* Hero section sin desbordamiento lateral */
+  .hero-section { padding: 2.5rem 0 3.5rem; }
+  .hero-title { font-size: 2.15rem; line-height: 1.2; word-wrap: break-word; }
+  .hero-subtitle { font-size: 1rem; margin-bottom: 1.8rem; }
+  .hero-cta-group { flex-direction: column; align-items: stretch; width: 100%; gap: 0.8rem; }
+  .hero-cta-group .btn { width: 100%; text-align: center; }
+  .hero-stats { justify-content: space-between; gap: 0.5rem; }
+  .stat-number { font-size: 1.35rem; }
+  .stat-label { font-size: 0.75rem; }
+  
+  /* Corrección crítica de badges flotantes (eliminando coordenadas negativas que causaban overflow-x) */
+  .hero-floating-badge.top-right { top: 12px; right: 12px; left: auto; padding: 0.6rem 0.9rem; max-width: calc(100% - 24px); }
+  .hero-floating-badge.bottom-left { bottom: 12px; left: 12px; right: auto; padding: 0.6rem 0.9rem; max-width: calc(100% - 24px); }
+  .badge-icon { font-size: 1.2rem; }
+  .badge-text strong { font-size: 0.85rem; }
+  .badge-text span { font-size: 0.72rem; }
+  .hero-img { height: 380px; }
+  
+  /* Slider Antes/Después optimizado para touch y pantalla pequeña */
+  .project-tabs { flex-direction: column; align-items: stretch; gap: 0.6rem; width: 100%; margin-bottom: 1.8rem; }
+  .tab-btn { width: 100%; padding: 0.75rem 1rem; font-size: 0.9rem; text-align: center; white-space: normal; }
+  .ba-slider-container { height: 320px; touch-action: none; -webkit-user-select: none; }
+  .ba-label { top: 12px; padding: 0.3rem 0.7rem; font-size: 0.72rem; }
+  .ba-label-before { right: 12px; }
+  .ba-label-after { left: 12px; }
+  .ba-handle-button { width: 40px; height: 40px; }
+  .project-info-card { padding: 1.4rem 1.2rem; }
+  .info-meta { gap: 1rem; flex-direction: column; }
+  
+  /* Calculadora Express en móvil */
+  .calculator-card { padding: 2rem 1.2rem; border-radius: var(--radius-md); }
+  .calc-slider-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .m2-guide-badges { justify-content: stretch; gap: 0.5rem; }
+  .guide-item { flex: 1 1 100%; text-align: center; font-size: 0.8rem; }
+  .cost-breakdown { grid-template-columns: 1fr; gap: 0.8rem; }
+  .result-amount { font-size: 2.5rem; }
+  
+  /* Sección Garantía y Furgoneta */
+  .guarantee-grid { gap: 2.5rem; }
+  .van-img { height: 320px; }
+  .van-overlay { padding: 1.5rem; }
+  .van-phone { font-size: 1.15rem; }
+  
+  /* Footer */
+  .footer-container { gap: 2.5rem; }
+  .footer-bottom-content { flex-direction: column; text-align: center; gap: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 1.85rem; }
+  .section-title { font-size: 1.65rem; }
+  .ba-slider-container { height: 260px; }
+  .hero-stats { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .stat-divider { width: 100%; height: 1px; }
 }
 

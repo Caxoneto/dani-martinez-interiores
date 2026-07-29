@@ -63,11 +63,17 @@ function initBeforeAfterSlider() {
     isDragging = false;
   });
 
-  // Touch Events (Mobile)
+  // Touch Events (Mobile) - Optimizado sin scroll indebido
   container.addEventListener('touchstart', (e) => {
     isDragging = true;
     if (e.touches[0]) setSliderPosition(e.touches[0].clientX);
-  });
+  }, { passive: false });
+
+  container.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    if (e.cancelable) e.preventDefault(); // Evita el scroll o arrastre de la web al usar el slider
+    if (e.touches[0]) setSliderPosition(e.touches[0].clientX);
+  }, { passive: false });
 
   window.addEventListener('touchmove', (e) => {
     if (!isDragging) return;
