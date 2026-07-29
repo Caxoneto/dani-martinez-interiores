@@ -52,13 +52,9 @@
   padding: 0;
 }
 
-html, body {
+html {
   scroll-behavior: smooth;
   font-size: 16px;
-  max-width: 100%;
-  width: 100%;
-  overflow-x: hidden;
-  position: relative;
 }
 
 body {
@@ -66,6 +62,9 @@ body {
   background-color: var(--dark-bg);
   color: var(--text-main);
   line-height: 1.6;
+  max-width: 100%;
+  width: 100%;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -1175,7 +1174,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .nav-menu { display: none; }
   .mobile-toggle { display: flex; }
-  .container { padding: 0 1.2rem; max-width: 100%; overflow-x: hidden; }
+  .container { padding: 0 1.2rem; max-width: 100%; }
   
   /* Top bar y Header */
   .top-bar-content { flex-direction: column; text-align: center; gap: 0.4rem; padding: 0.3rem 0; font-size: 0.8rem; }
