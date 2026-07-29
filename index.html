@@ -14,8 +14,8 @@
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/images/logo.jpeg">
   
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css?v=2026_premium_v2">
 </head>
 <body>
 
@@ -71,19 +71,17 @@
           </a>
         </div>
 
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-number">+15</span>
-            <span class="stat-label">Años de Experiencia</span>
+        <div class="hero-stats-console">
+          <div class="stat-box">
+            <span class="stat-number text-gold-glow">+15</span>
+            <span class="stat-label">Años Experiencia</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Garantía de Limpieza</span>
+          <div class="stat-box">
+            <span class="stat-number text-gold-glow">100%</span>
+            <span class="stat-label">Limpieza Garantizada</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">4.9 ★</span>
+          <div class="stat-box">
+            <span class="stat-number text-gold-glow">4.9★</span>
             <span class="stat-label">Satisfacción Clientes</span>
           </div>
         </div>
@@ -110,6 +108,12 @@
       </div>
     </div>
   </section>
+
+  <div class="section-separator">
+    <div class="separator-line"></div>
+    <div class="separator-diamond">❖</div>
+    <div class="separator-line"></div>
+  </div>
 
   <!-- Services Grid Section -->
   <section class="section services-section" id="servicios">
@@ -187,6 +191,12 @@
     </div>
   </section>
 
+  <div class="section-separator" id="sep-servicios-ba">
+    <div class="separator-line"></div>
+    <div class="separator-diamond">❖</div>
+    <div class="separator-line"></div>
+  </div>
+
   <!-- Interactive Before & After Showcase -->
   <section class="section before-after-section" id="antes-despues">
     <div class="container">
@@ -251,6 +261,12 @@
     </div>
   </section>
 
+  <div class="section-separator">
+    <div class="separator-line"></div>
+    <div class="separator-diamond">❖</div>
+    <div class="separator-line"></div>
+  </div>
+
   <!-- Professional Guarantee & Van Showcase -->
   <section class="section guarantee-section" id="garantia">
     <div class="container">
@@ -285,15 +301,37 @@
           </div>
         </div>
 
-        <div class="guarantee-image-wrapper text-center">
-          <img src="assets/images/furgo_portrait.jpg?v=ultra" alt="Furgoneta equipada Dani Martínez Decoración en Interiores en Costa del Sol" class="guarantee-van-img">
-          <div class="van-badge">
-            <span>📍 Cobertura Total en San Pedro Alcántara y Costa del Sol</span>
+        <div class="guarantee-image-wrapper">
+          <div class="van-showcase-card" id="van-showcase">
+            <div class="van-image-frame">
+              <img src="assets/images/furgo_portrait.jpg?v=ultra" alt="Furgoneta equipada Dani Martínez en Costa del Sol" class="guarantee-van-img">
+            </div>
+            <div class="van-coverage-panel">
+              <div class="coverage-header-row">
+                <span class="pulse-beacon"></span>
+                <h4 class="coverage-main-title">Logística Propia & Cobertura Integral</h4>
+              </div>
+              <p class="coverage-sub">Desplazamiento ágil con maquinaria y materiales de alta gama desde nuestra sede local hacia todos los municipios de la Costa del Sol:</p>
+              <div class="territorial-pills">
+                <span class="t-pill base">📍 San Pedro Alcántara (Sede)</span>
+                <span class="t-pill">Marbella</span>
+                <span class="t-pill">Estepona</span>
+                <span class="t-pill">Puerto Banús</span>
+                <span class="t-pill">Benahavís</span>
+                <span class="t-pill">Mijas / Fuengirola</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="section-separator">
+    <div class="separator-line"></div>
+    <div class="separator-diamond">❖</div>
+    <div class="separator-line"></div>
+  </div>
 
   <!-- Interactive Budget Calculator -->
   <section class="section calculator-section" id="calculadora">
@@ -395,7 +433,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" id="contacto">
     <div class="container footer-container">
       <div class="footer-col brand-col">
         <img src="assets/images/logo.jpeg" alt="Dani Martínez Soluciones en Interiores" class="footer-logo">
@@ -415,7 +453,13 @@
       <div class="footer-col">
         <h4 class="footer-heading">Contacto Directo</h4>
         <div class="contact-info">
-          <p>📞 <strong>Teléfono / WhatsApp:</strong> <a href="https://wa.me/34695456141" target="_blank">695 45 61 41</a></p>
+          <div class="footer-call-action">
+            <p>📞 <strong>Teléfono Directo:</strong></p>
+            <a href="tel:+34695456141" class="btn btn-footer-phone" title="Llamar con un clic al 695 45 61 41">
+              <svg class="phone-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>Llamar: <strong>695 45 61 41</strong></span>
+            </a>
+          </div>
           <p>⏱️ <strong>Horario:</strong> Lunes a Viernes: 08:00 - 20:00</p>
           <p>📍 <strong>Base:</strong> San Pedro Alcántara (Málaga)</p>
           <p>📍 <strong>Zona:</strong> Marbella, Estepona, Benahavís, Fuengirola y Costa del Sol</p>
